@@ -381,3 +381,810 @@ Follow this learning order:
 
 My goal: Understand every line of my first HTML project, practise writing the code independently, and then improve the same project using CSS.
 -->
+
+
+# HTML COMPLETE NOTES — HINGLISH
+# Beginner Level | VS Code Practice
+
+<!-- ================================================== -->
+<!-- 1. HTML KYA HAI? -->
+<!-- ================================================== -->
+
+<!--
+HTML ka full form HyperText Markup Language hai.
+
+HTML ka use website ka structure banane ke liye hota hai.
+Jaise headings, paragraphs, images, links, lists aur tables.
+
+HTML programming language nahi, balki markup language hai.
+
+Example:
+
+<h1>My Website</h1>
+<p>Welcome to my website.</p>
+-->
+
+
+<!-- ================================================== -->
+<!-- 2. BASIC HTML DOCUMENT STRUCTURE -->
+<!-- ================================================== -->
+
+<!--
+Har HTML page ka ek basic structure hota hai.
+
+<!DOCTYPE html>
+Browser ko batata hai ki document HTML5 standard use karta hai.
+
+<html>
+Poore HTML document ka root element hai.
+
+<head>
+Page ki metadata, title aur CSS links rakhta hai.
+
+<body>
+Website ka visible content rakhta hai.
+
+Example:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website</title>
+</head>
+<body>
+    <h1>Hello World</h1>
+    <p>This is my first website.</p>
+</body>
+</html>
+-->
+
+
+<!-- ================================================== -->
+<!-- 3. HTML TAGS, ELEMENTS AUR ATTRIBUTES -->
+<!-- ================================================== -->
+
+<!--
+Tag:
+<h1> ek opening tag hai.
+</h1> ek closing tag hai.
+
+Element:
+<h1>Hello</h1> poora HTML element hai.
+
+Attribute:
+Element ke baare mein additional information deta hai.
+
+Example:
+
+<a href="https://example.com">Visit Website</a>
+
+<a> = Anchor tag
+href = Attribute
+https://example.com = Attribute value
+Visit Website = Visible link text
+
+Kuch elements, jaise <img> aur <meta>,
+normal closing tag use nahi karte.
+-->
+
+
+<!-- ================================================== -->
+<!-- 4. HEADINGS: h1 TO h6 -->
+<!-- ================================================== -->
+
+<!--
+HTML mein 6 heading levels hote hain.
+
+<h1>Main Heading</h1>
+<h2>Section Heading</h2>
+<h3>Subsection Heading</h3>
+<h4>Heading Level 4</h4>
+<h5>Heading Level 5</h5>
+<h6>Heading Level 6</h6>
+
+h1 sabse important heading level hai.
+h6 sabse lower heading level hai.
+
+Headings ko content ki hierarchy ke according use karo.
+Sirf font size badalne ke liye heading tags use mat karo.
+-->
+
+
+<!-- ================================================== -->
+<!-- 5. PARAGRAPH AUR TEXT ELEMENTS -->
+<!-- ================================================== -->
+
+<!--
+<p> = Paragraph banata hai.
+
+<strong> = Important text show karta hai.
+Usually bold dikhta hai.
+
+<em> = Emphasized text.
+Usually italic dikhta hai.
+
+<br> = Line break deta hai.
+
+<hr> = Thematic break show karta hai.
+
+Example:
+
+<h1>About Me</h1>
+
+<p>My name is Satyam.</p>
+
+<p>I am learning <strong>HTML</strong>.</p>
+
+<p>HTML is <em>important</em> for web development.</p>
+
+<p>First Line<br>Second Line</p>
+
+<hr>
+
+<p>New section starts here.</p>
+-->
+
+
+<!-- ================================================== -->
+<!-- 6. HTML LISTS -->
+<!-- ================================================== -->
+
+<!--
+<ul> = Unordered list, jisme generally bullets hote hain.
+
+<ol> = Ordered list, jisme generally numbering hoti hai.
+
+<li> = List item.
+
+Example:
+
+<h2>My Skills</h2>
+
+<ul>
+    <li>HTML</li>
+    <li>CSS</li>
+    <li>JavaScript</li>
+</ul>
+
+<h2>Daily Steps</h2>
+
+<ol>
+    <li>Open VS Code</li>
+    <li>Write HTML</li>
+    <li>Run the website</li>
+</ol>
+
+Nested list:
+
+<ul>
+    <li>Frontend
+        <ul>
+            <li>HTML</li>
+            <li>CSS</li>
+        </ul>
+    </li>
+    <li>Backend</li>
+</ul>
+-->
+
+
+<!-- ================================================== -->
+<!-- 7. LINKS: ANCHOR TAG -->
+<!-- ================================================== -->
+
+<!--
+<a> = Link banata hai.
+
+href = Link ka destination.
+
+target="_blank" = Link ko new tab mein open karta hai.
+
+rel="noopener noreferrer" = New tab ke saath
+security aur referrer-related protections deta hai.
+
+Example:
+
+<a href="https://github.com/">
+    GitHub
+</a>
+
+<a href="https://github.com/" target="_blank"
+   rel="noopener noreferrer">
+    Open GitHub in New Tab
+</a>
+
+Email link:
+
+<a href="mailto:example@gmail.com">Email Me</a>
+
+Phone link:
+
+<a href="tel:+919876543210">Call Me</a>
+
+Same page ke section par jaana:
+
+<a href="#skills">Go to Skills</a>
+
+<h2 id="skills">My Skills</h2>
+
+href="#skills" us element tak navigate karta hai
+jiski id="skills" hai.
+-->
+
+
+<!-- ================================================== -->
+<!-- 8. IMAGES -->
+<!-- ================================================== -->
+
+<!--
+<img> = Image display karta hai.
+
+src = Image ka path ya URL.
+alt = Image ka text alternative.
+width = Image ki width.
+height = Image ki height.
+
+Example:
+
+<img src="profile.jpg"
+     alt="My Profile Photo"
+     width="150"
+     height="150">
+
+Agar image images folder mein hai:
+
+<img src="images/profile.jpg"
+     alt="My Profile Photo"
+     width="150">
+
+Project structure:
+
+MyProject/
+    index.html
+    images/
+        profile.jpg
+
+Apne computer ka absolute Windows path dene ke bajay
+project ke andar image rakhkar relative path use karna
+zyada portable hota hai.
+-->
+
+
+<!-- ================================================== -->
+<!-- 9. SEMANTIC HTML -->
+<!-- ================================================== -->
+
+<!--
+Semantic elements apne content ka meaning batate hain.
+
+<header> = Page ya section ka introductory content.
+<nav> = Navigation links.
+<main> = Page ka primary content.
+<section> = Related content ka section.
+<article> = Self-contained content, jaise recipe ya blog.
+<aside> = Related supplementary content.
+<footer> = Concluding information.
+
+Example:
+
+<header>
+    <h1>My Website</h1>
+</header>
+
+<nav>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<main>
+    <section id="about">
+        <h2>About Me</h2>
+        <p>I am learning HTML.</p>
+    </section>
+
+    <article>
+        <h2>My First Project</h2>
+        <p>This is a project description.</p>
+    </article>
+</main>
+
+<footer>
+    <p>Copyright 2026</p>
+</footer>
+
+Semantic tags code ko samajhne aur accessibility
+improve karne mein help karte hain.
+-->
+
+
+<!-- ================================================== -->
+<!-- 10. DIV AUR SPAN -->
+<!-- ================================================== -->
+
+<!--
+<div> = Generic block container.
+Related elements ko group karne ke liye.
+
+<span> = Generic inline container.
+Text ke chhote part ko group karne ke liye.
+
+Example:
+
+<div class="card">
+    <h2>My Profile</h2>
+    <p>I am a <span>Web Developer</span>.</p>
+</div>
+
+div generally apni new line se start hota hai.
+span generally text ki same line mein rehta hai.
+
+In dono ka special semantic meaning nahi hota.
+-->
+
+
+<!-- ================================================== -->
+<!-- 11. ID AUR CLASS -->
+<!-- ================================================== -->
+
+<!--
+id = Kisi specific element ki unique identity.
+
+class = Ek ya multiple elements ko group karne ke liye.
+
+Example:
+
+<h1 id="main-heading">My Website</h1>
+
+<p class="description">First paragraph.</p>
+<p class="description">Second paragraph.</p>
+
+id ko CSS mein # se select karte hain.
+class ko CSS mein . se select karte hain.
+
+#main-heading {
+    color: blue;
+}
+
+.description {
+    color: gray;
+}
+
+Note: Ye CSS examples hain, HTML syntax nahi.
+-->
+
+
+<!-- ================================================== -->
+<!-- 12. TABLES -->
+<!-- ================================================== -->
+
+<!--
+<table> = Table banata hai.
+<caption> = Table ka title.
+<thead> = Header rows ka group.
+<tbody> = Main data rows ka group.
+<tfoot> = Summary/footer rows ka group.
+<tr> = Table row.
+<th> = Header cell.
+<td> = Normal data cell.
+colspan = Ek cell ko multiple columns mein spread karta hai.
+
+Example:
+
+<table>
+    <caption>Product List</caption>
+
+    <thead>
+        <tr>
+            <th>Product</th>
+            <th>Price</th>
+            <th>Stock</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            <td>Keyboard</td>
+            <td>799</td>
+            <td>25</td>
+        </tr>
+
+        <tr>
+            <td>Mouse</td>
+            <td>399</td>
+            <td>40</td>
+        </tr>
+    </tbody>
+
+    <tfoot>
+        <tr>
+            <td colspan="2">Total Stock</td>
+            <td>65</td>
+        </tr>
+    </tfoot>
+</table>
+
+Tables ka use tabular data ke liye karo,
+page layout banane ke liye nahi.
+-->
+
+
+<!-- ================================================== -->
+<!-- 13. FORMS -->
+<!-- ================================================== -->
+
+<!--
+<form> = User input collect karne ke liye.
+<label> = Input ka label.
+<input> = Input field.
+<select> = Dropdown.
+<option> = Dropdown ka option.
+<textarea> = Multi-line text input.
+<button> = Clickable button.
+
+Example:
+
+<form>
+    <label for="username">Name:</label>
+
+    <input type="text"
+           id="username"
+           name="username"
+           placeholder="Enter your name"
+           required>
+
+    <label for="email">Email:</label>
+
+    <input type="email"
+           id="email"
+           name="email"
+           required>
+
+    <label for="city">City:</label>
+
+    <select id="city" name="city">
+        <option value="">Choose a city</option>
+        <option value="noida">Noida</option>
+        <option value="delhi">Delhi</option>
+    </select>
+
+    <label for="message">Message:</label>
+
+    <textarea id="message"
+              name="message"
+              rows="4"></textarea>
+
+    <button type="submit">Submit</button>
+</form>
+
+Important attributes:
+
+type = Input ka type.
+id = Element ki identity.
+name = Form data ka field name.
+value = Input ki value.
+placeholder = Input hint.
+required = Input mandatory banata hai.
+for = Label ko input se connect karta hai.
+-->
+
+
+<!-- ================================================== -->
+<!-- 14. INPUT KE DIFFERENT TYPES -->
+<!-- ================================================== -->
+
+<!--
+Text:
+
+<input type="text">
+
+Email:
+
+<input type="email">
+
+Password:
+
+<input type="password">
+
+Number:
+
+<input type="number">
+
+Date:
+
+<input type="date">
+
+Checkbox:
+
+<input type="checkbox">
+
+Radio:
+
+<input type="radio" name="gender" value="male">
+
+File:
+
+<input type="file">
+
+Submit button:
+
+<input type="submit" value="Submit">
+
+Har input type ka purpose alag hota hai.
+-->
+
+
+<!-- ================================================== -->
+<!-- 15. BUTTONS -->
+<!-- ================================================== -->
+
+<!--
+<button> = Clickable button.
+
+type="button" = Normal button.
+type="submit" = Form submit karne ke liye.
+type="reset" = Form fields reset karne ke liye.
+
+Example:
+
+<button type="button">Click Me</button>
+
+<button type="submit">Submit Form</button>
+
+Button ko form ke andar use karte waqt
+type clearly set karna achhi practice hai.
+-->
+
+
+<!-- ================================================== -->
+<!-- 16. HTML COMMENTS -->
+<!-- ================================================== -->
+
+<!--
+HTML comments browser ke visible page par nahi dikhte.
+
+Single-line comment:
+
+<!-- This is a comment -->
+
+Multiple-line comment:
+
+<!--
+This is line one.
+This is line two.
+This is line three.
+-->
+
+Comments code ko explain karne ke liye hote hain.
+
+Comments mein passwords ya API keys mat rakho.
+-->
+
+
+<!-- ================================================== -->
+<!-- 17. HTML ENTITIES -->
+<!-- ================================================== -->
+
+<!--
+Special characters ko display karne ke liye entities.
+
+&lt;  = <
+&gt;  = >
+&amp; = &
+&quot; = "
+&copy; = ©
+&nbsp; = Non-breaking space
+
+Example:
+
+<p>5 &lt; 10</p>
+<p>Tom &amp; Jerry</p>
+<p>Copyright &copy; 2026</p>
+-->
+
+
+<!-- ================================================== -->
+<!-- 18. META TAGS -->
+<!-- ================================================== -->
+
+<!--
+<meta charset="UTF-8">
+Character encoding define karta hai.
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+Mobile aur different screen sizes par
+viewport settings define karta hai.
+
+<meta name="description"
+      content="My personal website">
+
+Page ki description provide karta hai,
+jo search engines use kar sakte hain.
+
+<title>My Website</title>
+Browser tab ka title define karta hai.
+-->
+
+
+<!-- ================================================== -->
+<!-- 19. AUDIO AUR VIDEO -->
+<!-- ================================================== -->
+
+<!--
+<audio> = Audio content embed karta hai.
+<video> = Video content embed karta hai.
+controls = Browser ke playback controls dikhata hai.
+
+Example:
+
+<audio controls>
+    <source src="music.mp3" type="audio/mpeg">
+    Your browser does not support audio.
+</audio>
+
+<video controls width="400">
+    <source src="video.mp4" type="video/mp4">
+    Your browser does not support video.
+</video>
+
+Ye examples tab kaam karenge jab
+music.mp3 aur video.mp4 files available hon.
+-->
+
+
+<!-- ================================================== -->
+<!-- 20. IFRAME -->
+<!-- ================================================== -->
+
+<!--
+<iframe> = Ek webpage ke andar doosra webpage
+ya supported external content embed karta hai.
+
+Example:
+
+<iframe
+    src="https://example.com"
+    title="Example Website"
+    width="500"
+    height="300">
+</iframe>
+
+Kuch websites security settings ki wajah se
+iframe ke andar load nahi hoti.
+-->
+
+
+<!-- ================================================== -->
+<!-- 21. FILE PATHS -->
+<!-- ================================================== -->
+
+<!--
+Relative path:
+Project ke current folder ke respect mein path.
+
+<img src="profile.jpg" alt="Profile">
+
+Subfolder ka path:
+
+<img src="images/profile.jpg" alt="Profile">
+
+Parent folder ka path:
+
+<img src="../profile.jpg" alt="Profile">
+
+Absolute URL:
+
+<a href="https://example.com">Example</a>
+
+Relative paths project ko doosre computer par
+move karne mein zyada convenient hote hain.
+-->
+
+
+<!-- ================================================== -->
+<!-- 22. HTML ACCESSIBILITY BASICS -->
+<!-- ================================================== -->
+
+<!--
+Accessibility ka matlab website ko different users
+ke liye accessible banana.
+
+Images mein meaningful alt text do:
+
+<img src="chai.jpg" alt="Cup of masala chai">
+
+Form fields ke saath labels use karo:
+
+<label for="email">Email</label>
+<input type="email" id="email" name="email">
+
+Headings ko logical order mein use karo.
+
+Buttons aur links ko meaningful names do.
+
+Sirf color ke through important information
+communicate karne se bacho.
+-->
+
+
+<!-- ================================================== -->
+<!-- 23. HTML AUR CSS KA DIFFERENCE -->
+<!-- ================================================== -->
+
+<!--
+HTML = Structure.
+CSS = Styling aur layout.
+JavaScript = Interaction aur functionality.
+
+Example HTML:
+
+<h1 class="heading">Hello World</h1>
+
+CSS:
+
+.heading {
+    color: blue;
+    text-align: center;
+}
+
+HTML content banata hai.
+CSS content ka appearance control karta hai.
+-->
+
+
+<!-- ================================================== -->
+<!-- 24. HTML AUR JAVASCRIPT KA CONNECTION -->
+<!-- ================================================== -->
+
+<!--
+<script> = HTML page mein JavaScript include karta hai.
+
+Example:
+
+<p id="message">Old Message</p>
+
+<button onclick="changeMessage()">Click Me</button>
+
+<script>
+    function changeMessage() {
+        document.getElementById("message").textContent =
+            "New Message";
+    }
+</script>
+
+id se element select kiya.
+textContent se text change kiya.
+onclick par function execute hua.
+
+DOM aur JavaScript events HTML tags nahi hain,
+balki JavaScript ke concepts hain.
+-->
+
+
+<!-- ================================================== -->
+<!-- 25. COMMON HTML MISTAKES -->
+<!-- ================================================== -->
+
+<!--
+1. Closing tags bhool jaana.
+2. Attribute values ke quotes bhool jaana.
+3. Image ka galat path dena.
+4. Duplicate id values use karna.
+5. Lists ke liye <li> ko sahi jagah use na karna.
+6. Table mein rows aur cells ka structure galat banana.
+7. Image mein alt attribute miss karna.
+8. Label ke for aur input ke id ko match na karna.
+9. Styling ke liye semantic elements ka galat use karna.
+10. HTML file ko .html extension ke saath save na karna.
+
+VS Code mein file ko index.html naam se save karo.
+Browser ya Live Server se run karke output check karo.
+-->
+
+
+<!-- ================================================== -->
+<!-- END OF HTML NOTES -->
+<!-- ================================================== -->
