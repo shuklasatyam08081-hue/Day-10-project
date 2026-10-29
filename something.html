@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sanskriti AI - Light Theme</title>
+    <style>
+        body { 
+            font-family: 'Inter', 'Segoe UI', sans-serif; 
+            background: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%); 
+            background-attachment: fixed;
+            color: #2d3436;
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            min-height: 100vh; 
+            margin: 0; 
+        }
+
+        .card { 
+            background: rgba(255, 255, 255, 0.9); 
+            padding: 40px; 
+            border-radius: 30px; 
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1); 
+            width: 90%; 
+            max-width: 500px;
+            text-align: center;
+        }
+
+        h2 { 
+            color: #4834d4; 
+            font-size: 26px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        select, input { 
+            width: 100%; 
+            padding: 14px; 
+            margin: 12px 0; 
+            border-radius: 15px; 
+            border: 2px solid #dfe6e9; 
+            background: #ffffff; 
+            color: #2d3436; 
+            font-size: 16px;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        select:focus, input:focus {
+            border-color: #6c5ce7;
+            box-shadow: 0 0 10px rgba(108, 92, 231, 0.2);
+        }
+
+        button { 
+            width: 100%; 
+            padding: 15px; 
+            background: linear-gradient(135deg, #6c5ce7, #a29bfe);
+            color: white; 
+            border: none; 
+            border-radius: 15px; 
+            cursor: pointer; 
+            font-weight: 600; 
+            font-size: 17px;
+            margin-top: 20px;
+            box-shadow: 0 4px 15px rgba(108, 92, 231, 0.3);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        button:hover { 
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(108, 92, 231, 0.4);
+        }
+
+        #response { 
+            margin-top: 25px; 
+            padding: 20px; 
+            background: #f1f2f6; 
+            border-radius: 15px; 
+            border-right: 4px solid #6c5ce7; 
+            font-size: 15px; 
+            line-height: 1.7; 
+            display: none; 
+            text-align: left;
+            color: #2f3542;
+            animation: slideUp 0.4s ease-out;
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .loader { 
+            display: none; 
+            margin-top: 15px;
+            color: #6c5ce7;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <h2>Apne Riti Riwaj or Unko Kaise Kiya Jaye Using AI 🕊️</h2>
+    <p style="color: #636e72; margin-bottom: 20px;">Apni paramparaon ko digital tareeke se jaanein</p>
+    
+    <select id="religion">
+        <option value="">Apna Dharm Chunein</option>
+        <option value="Hindu">Hinduism</option>
+        <option value="Islam">Islam</option>
+        <option value="Sikh">Sikhism</option>
+        <option value="Christian">Christianity</option>
+        <option value="Jain">Jainism</option>
+        <option value="Buddhist">Buddhism</option>
+    </select>
+
+    <input type="text" id="userInput" placeholder="Tyohar ya riti-riwaj ka naam...">
+    
+    <button onclick="askAI()">Jankari Prapt Karein</button>
+
+    <div id="loader" class="loader">✨ AI jankari dhoond raha hai...</div>
+    <div id="response"></div>
+</div>
+
+<script>
+    async function askAI() {
+        const religion = document.getElementById('religion').value;
+        const query = document.getElementById('userInput').value;
+        const responseDiv = document.getElementById('response');
+        const loader = document.getElementById('loader');
+
+        if (!religion || !query) {
+            alert("Kripya dono fields ko bharein!");
+            return;
+        }
+
+        loader.style.display = 'block';
+        responseDiv.style.display = 'none';
+
+        const API_KEY = "api key "; 
+        const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${API_KEY}`;
+
+        const prompt = `You are a respectful cultural guide. Explain the ritual or festival '${query}' of '${religion}' religion in simple Hindi. Include its importance and how it's celebrated.`;
+
+        try {
+            const response = await fetch(API_URL, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    contents: [{ parts: [{ text: prompt }] }]
+                })
+            });
+
+            const data = await response.json();
+            const aiText = data.candidates[0].content.parts[0].text;
+
+            responseDiv.innerHTML = `<strong>Jankari:</strong><br>${aiText.replace(/\n/g, '<br>')}`;
+            responseDiv.style.display = 'block';
+        } catch (error) {
+            responseDiv.innerHTML = "❌ Maaf kijiye, kuch तकनीकी (technical) dikkat aa gayi.";
+            responseDiv.style.display = 'block';
+        } finally {
+            loader.style.display = 'none';
+        }
+    }
+</script>
+
+</body>
+</html>

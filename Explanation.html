@@ -1,0 +1,383 @@
+
+<!--
+# HTML First Project — My Profile
+## Complete Beginner Notes
+
+## 1. What is HTML?
+
+HTML stands for **HyperText Markup Language**.
+
+HTML is used to create the structure of a webpage. It tells the browser where to display headings, paragraphs, images, lists, and links.
+
+For example, in my profile webpage:
+- My name is displayed using a heading.
+- My photo is displayed using an image tag.
+- My skills are displayed using a list.
+- GitHub and Email are displayed as clickable links.
+
+**Remember:** HTML creates the structure, CSS styles the webpage, and JavaScript adds interactivity.
+
+## 2. Complete HTML Code
+
+Save this code in a file named `index.html`.
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile</title>
+</head>
+<body>
+    <h1>Satyam Shukla</h1>
+    <h2>Web Developer</h2>
+
+    <img src="images/Snapchat-1758465704.jpg"
+         alt="Profile Photo"
+         width="150">
+
+    <p>Hi! Main HTML ka apna first project bana raha hoon.</p>
+
+    <h3>Skills</h3>
+    <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+    </ul>
+
+    <h3>Links</h3>
+    <p>
+        <a href="https://github.com/shuklasatyam08081-hue"
+           target="_blank"
+           rel="noopener noreferrer">GitHub</a>
+        |
+        <a href="mailto:shuklasatyam08081@gmail.com">Email Me</a>
+    </p>
+</body>
+</html>
+
+## 3. Understanding the HTML Code Step by Step
+
+### A. <!DOCTYPE html>
+
+This declaration tells the browser to use the HTML5 document standard.
+
+### B. <html lang="en">
+
+The <html> element is the root element of the HTML document.
+
+The attribute lang="en" specifies that the primary language of the webpage is English.
+
+### C. <head>
+
+The <head> element contains metadata and other information about the webpage. Most of its contents are not displayed directly in the page body.
+
+### D. <meta charset="UTF-8">
+
+This specifies the character encoding of the document.
+
+UTF-8 supports English, Hindi and many other characters.
+
+### E. Viewport Meta Tag
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+This helps the webpage display correctly on different screen sizes.
+
+- width=device-width: Sets the layout viewport width to the device width.
+- initial-scale=1.0: Sets the initial zoom level to 100%.
+
+### F. <title>
+
+<title>My Profile</title>
+
+The title usually appears in the browser tab. It is different from the visible heading inside the webpage.
+
+### G. <body>
+
+The <body> element contains the main webpage content that users see, such as text, images, headings and links.
+
+## 4. HTML Headings
+
+HTML provides six heading levels, from <h1> to <h6>.
+
+Example:
+<h1>Satyam Shukla</h1>
+<h2>Web Developer</h2>
+<h3>My Skills</h3>
+<h4>My Projects</h4>
+<h5>My Interests</h5>
+<h6>Additional Information</h6>
+
+Explanation:
+- <h1>: Main heading.
+- <h2>: Second-level heading.
+- <h3>: Third-level heading.
+- <h4>: Fourth-level heading.
+- <h5>: Fifth-level heading.
+- <h6>: Sixth-level heading.
+
+Use headings according to the structure and importance of your content, not just to change text size.
+
+## 5. HTML Paragraph
+
+The <p> tag is used to create a paragraph.
+
+Example:
+<p>Hi! Main HTML ka apna first project bana raha hoon.</p>
+
+A paragraph is useful for introductions, descriptions and ordinary text.
+
+Example:
+<p>I am learning HTML to build my own website.</p>
+<p>This is my first web development project.</p>
+
+## 6. HTML Images
+
+The <img> element is used to display an image.
+
+Example:
+<img src="images/Snapchat-1758465704.jpg"
+     alt="Profile Photo"
+     width="150">
+
+Important attributes:
+
+### src
+Specifies the image source or path.
+
+Example:
+src="images/Snapchat-1758465704.jpg"
+
+### alt
+Provides alternative text describing the image. It is useful for accessibility and when the image cannot be displayed.
+
+Example:
+alt="Profile Photo"
+
+### width
+Sets the image width in pixels when a numeric value is provided.
+
+Example:
+width="150"
+
+### Recommended Project Structure
+
+My Profile/
+    index.html
+    images/
+        Snapchat-1758465704.jpg
+
+A relative path such as images/Snapchat-1758465704.jpg helps keep the project portable.
+
+Avoid using an absolute Windows path such as:
+C:\Users\pawan\OneDrive\Pictures\photo.jpg
+
+Important: <img> is a void element, so it does not need a closing tag.
+
+## 7. HTML Lists
+
+HTML supports two common types of lists: unordered lists and ordered lists.
+
+### A. Unordered List — <ul>
+
+An unordered list normally displays bullet points.
+
+Example:
+<ul>
+    <li>HTML</li>
+    <li>CSS</li>
+    <li>JavaScript</li>
+</ul>
+
+Explanation:
+- <ul> means Unordered List.
+- <li> means List Item.
+- Each <li> represents one item in the list.
+
+### B. Ordered List — <ol>
+
+An ordered list normally displays numbered items.
+
+Example:
+<ol>
+    <li>Learn HTML</li>
+    <li>Learn CSS</li>
+    <li>Learn JavaScript</li>
+</ol>
+
+Use <ul> when the order is not important and <ol> when the sequence matters.
+
+## 8. HTML Links and the Anchor Tag
+
+The <a> tag is called the anchor element. It creates a hyperlink.
+
+Example:
+<a href="https://www.google.com">Visit Google</a>
+
+### href
+The href attribute specifies the destination of the link.
+
+### Opening a Link in a New Tab
+
+Example:
+<a href="https://github.com/shuklasatyam08081-hue"
+   target="_blank"
+   rel="noopener noreferrer">GitHub</a>
+
+- href: Specifies the link destination.
+- target="_blank": Requests that the link open in a new tab.
+- rel="noopener noreferrer": Provides additional security and privacy protection.
+
+Remember: Write target="_blank", not target="-blank".
+
+## 9. Email Links Using mailto:
+
+The mailto: scheme creates a link intended to start an email to a specified recipient.
+
+Example:
+<a href="mailto:shuklasatyam08081@gmail.com">Email Me</a>
+
+When the user clicks this link, the browser or operating system attempts to open the configured email handler.
+
+The email is not sent automatically.
+
+## 10. HTML Attributes
+
+Attributes provide additional information about HTML elements.
+
+Example:
+<a href="https://www.google.com" target="_blank">Google</a>
+
+Here, href and target are attributes.
+
+Another example:
+<img src="photo.jpg" alt="My Photo" width="150">
+
+Here, src, alt and width are attributes.
+
+Remember:
+- Tags define HTML elements.
+- Attributes provide additional information or configuration.
+- Attribute values are commonly written inside quotation marks.
+
+## 11. Opening Tags and Closing Tags
+
+Most HTML elements use an opening tag and a closing tag.
+
+Example:
+<p>This is a paragraph.</p>
+
+- <p> is the opening tag.
+- This is a paragraph. is the content.
+- </p> is the closing tag.
+
+The forward slash / is used in the closing tag.
+
+Some elements, such as <img> and <meta>, are void elements and do not require closing tags.
+
+## 12. How the Entire Webpage Works
+
+HTML Document
+    |
+    |-- Head
+    |   |-- Character Encoding
+    |   |-- Viewport Settings
+    |   |-- Page Title
+    |
+    |-- Body
+        |-- Main Heading
+        |-- Subheading
+        |-- Profile Image
+        |-- Introduction Paragraph
+        |-- Skills List
+        |-- GitHub Link
+        |-- Email Link
+
+The browser reads the HTML document and constructs the webpage structure.
+
+## 13. Common HTML Mistakes to Avoid
+
+### Mistake 1: Incorrect Image Path
+
+Use a relative path when possible:
+<img src="images/photo.jpg" alt="Profile Photo">
+
+Make sure the image exists at the specified path.
+
+### Mistake 2: Incorrect Target Attribute
+
+Correct:
+<a href="https://example.com" target="_blank">Example</a>
+
+### Mistake 3: Forgetting Closing Tags
+
+Correct:
+<p>This is my introduction.</p>
+
+Some elements are void elements, so check the requirements for each element.
+
+### Mistake 4: Confusing href and src
+
+- Use href for a hyperlink destination.
+- Use src to specify an embedded resource, such as an image.
+
+### Mistake 5: Expecting Email to Send Automatically
+
+The mailto: link requests that an email handler open a message. It does not send the message automatically.
+
+## 14. Practice Questions
+
+1. What is the full form of HTML?
+2. What is the purpose of <!DOCTYPE html>?
+3. What is the difference between <head> and <body>?
+4. What is the purpose of the <title> tag?
+5. What is the difference between <h1> and <h3>?
+6. What is the purpose of the <p> tag?
+7. What do the src, alt and width attributes do?
+8. What is the difference between <ul> and <ol>?
+9. What is the purpose of the <li> tag?
+10. What does the <a> tag do?
+11. What is the difference between href and src?
+12. What does target="_blank" do?
+13. What is the purpose of mailto:?
+14. Why are relative image paths useful?
+15. Which HTML elements are called void elements?
+
+### Mini Practice Project
+
+Modify your profile page to include:
+- Your name and profession.
+- Your profile photo.
+- A short introduction.
+- At least five skills.
+- A numbered list of your learning goals.
+- Your GitHub link.
+- Your email link.
+- A heading called My Projects.
+
+Try writing the code yourself before checking the complete example.
+
+## 15. What Should I Learn Next?
+
+Follow this learning order:
+
+1. HTML: Elements, headings, paragraphs, links, images, lists, tables and forms.
+2. CSS: Colors, backgrounds, margins, padding, borders, fonts, Flexbox and Grid.
+3. Responsive Design: Media queries and layouts for mobile and desktop.
+4. JavaScript: Variables, data types, conditions, loops, functions and DOM manipulation.
+5. Projects: Build a personal portfolio, a landing page and a simple interactive website.
+
+## Final Summary
+
+- HTML creates the structure of a webpage.
+- CSS controls its appearance and layout.
+- JavaScript adds behavior and interactivity.
+- Tags define elements.
+- Attributes provide additional information.
+- Relative paths make local project files easier to organize and share.
+- Links allow users to navigate to other pages or launch actions such as composing an email.
+
+My goal: Understand every line of my first HTML project, practise writing the code independently, and then improve the same project using CSS.
+-->
